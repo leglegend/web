@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载插件fakeLoader</title>
+    <link rel="stylesheet" href="css/fakeLoader.css">
+</head>
+<body>
+<div id="fakeloader"></div>
+<p>实用简单，配置方便的轻量级加载框插件。</p>
+<p>缺点是只能够用作界面载入时的加载框，在页面加载完成后调用不再有效。</p>
+<p>建议使用在页面加载及渲染时的全屏遮罩</p>
+</body>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/fakeLoader.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#fakeloader").fakeLoader({
+            timeToHide:80000,//fakeLoader消失的时间，单位毫秒。
+            zIndex:999, // 默认的zIndex。
+            spinner:"spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+            bgColor:"#2ecc71", //全屏遮罩的背景颜色。可以是hex、RGB 或 RGBA 颜色值。
+            //imagePath:"yourPath/customizedImage.gif" //如果你想自定义图片，使用该选项
+        })
+        setTimeout(function(){
+            $("#fakeloader").fadeOut(200);
+        },2000)
+    });
+</script>
+</html>

@@ -1,0 +1,59 @@
+前提电脑中已经安装过NodeJS， npm。现在需要进行升级操作。
+
+1、查看当前的npm和NodeJs的版本：
+
+C:\Users\Administrator>node -v
+v4.4.3
+
+
+C:\Users\Administrator>npm -version
+2.15.1
+
+2、升级npm：
+
+C:\Users\Administrator>npm install npm -g
+C:\Program Files\nodejs\node_global\npm -> C:\Program Files\nodejs\node_global\n
+ode_modules\npm\bin\npm-cli.js
+npm@4.5.0 C:\Program Files\nodejs\node_global\node_modules\npm
+
+
+C:\Users\Administrator>npm -version
+4.5.0
+3、安装全局n模块：
+
+C:\Users\Administrator>npm install -g n
+npm ERR! code EBADPLATFORM
+npm ERR! notsup Unsupported platform for n@2.1.7: wanted {"os":"!win32","arch":"
+any"} (current: {"os":"win32","arch":"x64"})
+npm ERR! notsup Valid OS:    !win32
+npm ERR! notsup Valid Arch:  any
+npm ERR! notsup Actual OS:   win32
+npm ERR! notsup Actual Arch: x64
+
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Program Files\nodejs\node_cache\_logs\2017-05-02T02_08_33_861Z-d
+ebug.log
+
+报错哦，那执行下面的命令：
+
+C:\Users\Administrator>npm install -g n --force
+npm WARN using --force I sure hope you know what you are doing.
+C:\Program Files\nodejs\node_global\n -> C:\Program Files\nodejs\node_global\nod
+e_modules\n\bin\n
+C:\Program Files\nodejs\node_global
+`-- n@2.1.7
+
+4、升级NodeJs到最新版本：
+
+升级到最新稳定版本：
+
+n stable
+升级到最新版本：
+
+n latest
+升级到指定版本：
+
+n 0.10.26
+
+如果还是不行，直接登录http://nodejs.cn/download/

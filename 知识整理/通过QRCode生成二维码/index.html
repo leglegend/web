@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>通过barcode生成一维码，通过qrcode生成二维码，只需提供url即可，使用方便。</p>
+<div id="barCode"></div>
+<div id="qrCode"></div>
+</body>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script src="js/jquery-barcode.js"></script>
+<script>
+    $(function(){
+        $("#barCode").empty().barcode("www.baidu.com",  "code128", {
+            barWidth: 2,
+            barHeight: 60,
+            showHRI: true,
+            fontSize: 13,
+        });
+        $("#qrCode").empty().qrcode({
+            text: "www.baidu.com",
+            width: 180,
+            height: 180
+        });
+    })
+</script>
+</html>

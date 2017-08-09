@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="vh">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../css/imgbox.css" type="text/css" rel="stylesheet" />
+    <title>关于vh、vw的应用</title>
+</head>
+<style>
+    .vh{
+        height:100vh;
+        background-color: aqua;
+        padding: 0;
+        margin: 0;
+    }
+    .vw{
+        width:32vw;
+        background-color: #fd9871;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+</style>
+<body>
+<div >
+    <p>入行一年才发现原来height、width等长度css样式可以通过vh(相对于显示区域的高度)、vw(相对于显示区域的宽度)调整</p>
+    <p>这里的显示区域为浏览器的显示区域</p>
+    <p>经使用发现，该样式放在html层可以铺满屏幕，当使用在body和div中时，实际高度虽然取到了浏览器的高度，但是和浏览器边框存在间隙导致出现滚动条</p>
+    <span class="vw">1</span>
+    <span class="vw">2</span>
+    <span class="vw">3</span>
+    <p>使用vm对模块进行排版比较方便，和百分比做单位实现的效果类似</p>
+    <p>在实际应用中，用处比较大的地方为点击放大图片，不会出现超出屏幕范围图片的差错：</p>
+    <a id="example" href="../../images/example.jpg"><img src="../../images/example.jpg" width="100"/></a>
+</div>
+<script src="../../js/util/jquery.min.js"></script>
+<script src="../../js/util/jquery.imgbox.pack.js"></script>
+<script>
+    $(function(){
+        $("#example").imgbox({
+            'speedIn'		: 0,
+            'speedOut'		: 0,
+            'alignment'		: 'center',
+            'overlayShow'	: true,
+            'allowMultiple'	: true
+        });
+    });
+</script>
+</body>
+</html>
